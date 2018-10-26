@@ -18,8 +18,11 @@ body {margin: 0;}
 .board {
   background-image: url('cork.jpg'); 
 }
-.board h1 {
-  margin-left: 8px;
+.board h1, h2 {
+  font-family: 'Josefin Slab', serif;
+    background-color: aliceblue;
+    padding: 8px;
+    border: solid sienna;
 }
 .column-container {
   display: flex;
