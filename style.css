@@ -1,4 +1,13 @@
-body {margin: 0;}
+body {
+    	margin: 0 auto;
+	display: block;
+	max-width: 1200px;
+	background-color: turquoise;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+}
 * {box-sizing: border-box;}
 
 .ui-sortable {
