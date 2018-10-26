@@ -26,6 +26,9 @@ body {
 /* BOARD */
 .board {
   background-image: url('cork.jpg'); 
+  padding: 40px;
+  margin: 30px;
+  max-width: 1200px;
 }
 .board h1, h2 {
   font-family: 'Josefin Slab', serif;
