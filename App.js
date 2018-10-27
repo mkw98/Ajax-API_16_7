@@ -7,20 +7,20 @@ $.ajaxSetup({
 	headers: myHeaders
 });
 
-// OGÓLNA FUNKCJA
-function randomString() {
-	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'.split();
-	var str = '', i;
-	for (i = 0; i < 10; i++) {
-	  str += chars[Math.floor(Math.random() * chars.length)];
-	}
-	return str;
-}
+// OGÓLNA FUNKCJA juz nie jest potrzebna!
+//function randomString() {
+//	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'.split();
+//	var str = '', i;
+//	for (i = 0; i < 10; i++) {
+//	  str += chars[Math.floor(Math.random() * chars.length)];
+//	}
+//	return str;
+// }
 
 // TWORZENIE NOWYCH EGZEMPLARZY KOLUMN
-var todoColumn = new Column('Do zrobienia');
-var doingColumn = new Column('W trakcie');
-var doneColumn = new Column('Skończone');
+var todoColumn = new Column('To do');
+var doingColumn = new Column('Doing');
+var doneColumn = new Column('Done');
 
 // DODAWANIE KOLUMN DO TABLICY
 board.createColumn(todoColumn);
