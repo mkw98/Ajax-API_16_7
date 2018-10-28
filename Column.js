@@ -1,7 +1,6 @@
 function Column(id, name) {
 
 	var self = this; //czy to jest potrzebne?
->>>>>>> fef0fe1c31a6895300b2d78341c3b70fb4aac2a5
 	
 	this.id = id;
 	this.name = name;
@@ -34,5 +33,5 @@ Column.prototype = {
 		   method: 'DELETE',
 		   
 	  //this.element.remove();
-	}
-};
+	})
+}};
