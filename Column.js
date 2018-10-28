@@ -48,6 +48,11 @@ Column.prototype = {
 	  this.element.children('ul').append(card.element);
 	},
 	deleteColumn: function() {
-	  this.element.remove();
+	   var self = this;
+	   $.ajax({
+		   url: baseUrl + '/.column/' + self.id,
+		   method: 'DELETE',
+		   
+	  //this.element.remove();
 	}
 };
