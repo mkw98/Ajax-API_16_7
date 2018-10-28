@@ -1,7 +1,7 @@
-function Column(name) {
-	var self = this;
+function Column(id, name) {
+	var self = this; //czy to jest potrzebne?
 	
-	this.id = randomString();
+	this.id = id;
 	this.name = name;
 	this.element = createColumn();
 
@@ -18,10 +18,22 @@ function Column(name) {
 			self.deleteColumn();
 		});
 		
-		columnAddCard.click(function(event) {
-			event.preventDefault();
-			self.createCard(new Card(prompt("Wpisz nazwę karty")));
-		});
+		 $columnAddCard.click(function(event) {
+			var cardName = prompt("Wpisz nazwę karty");
+			 event.preventDefault();
+			 $.ajax ({
+			 url: baseUrl + '/card',
+			method: 'POST',
+			data: {
+			name: cardName,
+			bootcamp_kanban_column_id: self.id
+			},
+			succes: function(response) {
+			var card = new Card(response.id, cardName);
+			self.createCard(card);
+			}
+		 });
+	 });
 			
 			// KONSTRUOWANIE ELEMENTU KOLUMNY
 		column.append(columnTitle)
