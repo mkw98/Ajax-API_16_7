@@ -1,6 +1,7 @@
 function Column(id, name) {
 
-	var self = this;
+	var self = this; //czy to jest potrzebne?
+>>>>>>> fef0fe1c31a6895300b2d78341c3b70fb4aac2a5
 	
 	this.id = id;
 	this.name = name;
@@ -13,43 +14,6 @@ function Column(id, name) {
 		var columnCardList = $('<ul class="card-list"></ul>');
 		var columnDelete = $('<button class="btn-delete">x</button>');
 		var columnAddCard = $('<button class="column-add-card">Dodaj kartę</button>');
-		
-//gdzie powinno się toznajdowaćw kodzie?
-		columnDelete: function() {
-    	var self = this;
-   	$.ajax({
-      		url: baseUrl + '/column/' + self.id,
-      		method: 'DELETE',
-      		success: function(response){
-     	self.element.remove();
-      	}
-   });
- }
-	
-//zamiast tego?
-		columnDelete.click(function() {
-			self.columnDelete();
-		});
-		
-		
-
-		$columnAddCard.click(function(event) {
-			var cardName = prompt("Wpisz treść kartki");
-			event.preventDefault();
-			$.ajax({
-    			url: baseUrl + '/card',
-    			method: 'POST',
-    			data: {
-    			name: cardName,
-    			bootcamp_kanban_column_id: self.id
-    		},
-    		success: function(response) {
-        		var card = new Card(response.id, cardName);
-        		self.createCard(card);
-    		}
-		});
-	});
-
 		
 			// KONSTRUOWANIE ELEMENTU KOLUMNY
 		column.append(columnTitle)
@@ -64,6 +28,11 @@ Column.prototype = {
 	  this.element.children('ul').append(card.element);
 	},
 	deleteColumn: function() {
-	  this.element.remove();
+	   var self = this;
+	   $.ajax({
+		   url: baseUrl + '/.column/' + self.id,
+		   method: 'DELETE',
+		   
+	  //this.element.remove();
 	}
 };
