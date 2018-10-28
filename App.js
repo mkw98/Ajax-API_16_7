@@ -7,6 +7,33 @@ $.ajaxSetup({
 	headers: myHeaders
 });
 
+$.ajax({
+	url: baseUrl +  '/board',
+	method: 'GET',
+	success: function(response) {
+		setupColumns(response.colmns);
+	}
+});
+
+function setupColumns(columns) {
+	columns.forEach(function (column) {
+		
+		var col = new Column (column.id, column.name);
+	board.createColumn(col);
+	setupCards(col, column.cards);	
+	});
+}
+
+function setupCards(col, cards) {
+	cards.forEach(function (card) {
+	var cardObj = new Card(card.id, card.name, card.bootcamp_kanban_column_id);
+		
+	col.createCard(cardObj);
+	
+	})
+
+}
+	
 // OGÓLNA FUNKCJA juz nie jest potrzebna!
 //function randomString() {
 //	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'.split();
