@@ -1,3 +1,4 @@
+//ten plik jest juz zbedny
 $(function(){
 
   // FUNKCJE POMOCNICZE
