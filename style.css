@@ -49,7 +49,7 @@ body {
 /* COLUMN */
 .column {
   order: 1;
-  min-width: 300px;
+  width: 200px;
   min-height: 50vh;
   
   margin-left: 8px;
