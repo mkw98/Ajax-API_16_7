@@ -12,7 +12,7 @@ function Column(id, name) {
 		var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
 		var $columnCardList = $('<ul>').addClass('column-card-list');
 		var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-		var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
+		var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj zadanie');
 				
 		//podpiecie zdarzen
 		
