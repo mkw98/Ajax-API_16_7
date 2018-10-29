@@ -4,7 +4,7 @@ var board = {
 	  this.$element.append(column.$element);
 	  initSortable();
 	},
-	element: $('#board .column-container')
+	$element: $('#board .column-container')
 };
 
 $('.create-column').click(function(){
