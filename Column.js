@@ -13,7 +13,32 @@ function Column(id, name) {
 		var $columnCardList = $('<ul class="card-list"></ul>');
 		var $columnDelete = $('<button class="btn-delete">x</button>');
 		var $columnAddCard = $('<button class="column-add-card">Dodaj kartę</button>');
+				
+		//podpiecie zdarzen
 		
+		$columnDelete.click(function() {
+		        self.deleteColumn();
+			});
+
+
+			$columnAddCard.click(function(event) {
+				var cardName = prompt("Wpisz tekst na karteczce");
+				event.preventDefault();
+				
+				$.ajax({
+				    url: baseUrl + '/card',
+				    method: 'POST',
+				    data: {
+					    name: cardName,
+					    bootcamp_kanban_column_id: self.id
+				    },
+				    success: function(response) {
+				        var card = new Card(response.id, cardName);
+				        self.createCard(card);
+				    }
+				});
+			});
+
 			// KONSTRUOWANIE ELEMENTU KOLUMNY
 		 $column.append( $columnTitle)
 			.append( $columnDelete)
