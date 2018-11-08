@@ -9,7 +9,7 @@ var board = {
 
 $('.create-column').click(function(){
 		var columnName = prompt('Wpisz nazwę kolumny');
-		board.createColumn(new Column(columnName));
+		//board.createColumn(new Column(columnName));
 		$.ajax({
 			url: baseUrl + '/column',
 			method: 'POST',
@@ -24,8 +24,8 @@ $('.create-column').click(function(){
 	});
 	
 function initSortable() {
-    $('.card-list').sortable({
-      connectWith: '.card-list',
-      placeholder: 'card-placeholder'
-    }).disableSelection();
-  }
+	$('.column-card-list').sortable({
+		connectWith: '.column-card-list',
+		placeholder: 'card-placeholder'
+	}).disableSelection();
+}
